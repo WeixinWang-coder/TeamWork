@@ -15,19 +15,72 @@ import java.util.ArrayList;
 public class PESystem {
     
     private static PESystem system;
-    private ArrayList<PhysicalExamination> peDirectory;
-    private ArrayList<Department> departmentDirectory;
+    
     private UserAccountDirectory userAccountDirectory;
-    private ArrayList<Doctor> doctorDirectory;
-    private ArrayList<Customer> customerDirectory;
+    private CenterDirectory centerDirectory;
+    private DepartmentDirectory departmentDirectory;
+    private DoctorDirectory doctorDirectory;
+    private CustomerDirectory customerDirectory;
 
     public PESystem() {
-        this.peDirectory = new ArrayList<PhysicalExamination>();
-        this.departmentDirectory = new ArrayList<Department>();
-        this.doctorDirectory = new ArrayList<Doctor>();
-        this.userAccountDirectory = new UserAccountDirectory();
-        this.customerDirectory = new ArrayList<Customer>();
+            userAccountDirectory = new UserAccountDirectory();
+            centerDirectory = new CenterDirectory();
+            departmentDirectory = new DepartmentDirectory();
+            doctorDirectory = new DoctorDirectory();
+            customerDirectory = new CustomerDirectory();
     }
+
+        public static PESystem getSystem() {
+                return system;
+        }
+
+        public static void setSystem(PESystem system) {
+                PESystem.system = system;
+        }
+
+        public UserAccountDirectory getUserAccountDirectory() {
+                return userAccountDirectory;
+        }
+
+        public void setUserAccountDirectory(UserAccountDirectory userAccountDirectory) {
+                this.userAccountDirectory = userAccountDirectory;
+        }
+
+        public CenterDirectory getCenterDirectory() {
+                return centerDirectory;
+        }
+
+        public void setCenterDirectory(CenterDirectory centerDirectory) {
+                this.centerDirectory = centerDirectory;
+        }
+
+        public DepartmentDirectory getDepartmentDirectory() {
+                return departmentDirectory;
+        }
+
+        public void setDepartmentDirectory(DepartmentDirectory departmentDirectory) {
+                this.departmentDirectory = departmentDirectory;
+        }
+
+        public DoctorDirectory getDoctorDirectory() {
+                return doctorDirectory;
+        }
+
+        public void setDoctorDirectory(DoctorDirectory doctorDirectory) {
+                this.doctorDirectory = doctorDirectory;
+        }
+
+        public CustomerDirectory getCustomerDirectory() {
+                return customerDirectory;
+        }
+
+        public void setCustomerDirectory(CustomerDirectory customerDirectory) {
+                this.customerDirectory = customerDirectory;
+        }
+
+
+       
+
     
     public static PESystem getInstance(){
         if(system==null){

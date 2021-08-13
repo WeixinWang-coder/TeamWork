@@ -17,8 +17,18 @@ import javax.swing.JPanel;
 public abstract class Role {
     
     public enum RoleType{
-        SystemAdminRole("SystemAdmin");
-        
+        SystemAdminRole("SystemAdmin"),
+        Customer("Customer"),
+        SignInRole("SignInRole"),
+        BasicInspectionDoctorRole("BasicInspectionDoctorRole"),
+        ClinicalLabDoctorRole("ClinicalLabDoctorRole"),
+        InnternalMedDoctorRole("InnternalMedDoctorRole"),
+        OrthopedicsDoctorRole("OrthopedicsDoctorRole"),
+        OtorhinolaryngologicDoctorRole("OtorhinolaryngologicDoctorRole"),
+        PhyarmacyRole("PhyarmacyRole"),
+        SurgicalDoctorRole("SurgicalDoctorRole"),
+        FeedbackRole("FeedbackRole");
+
         private String value;
         
         private RoleType(String value){
@@ -35,9 +45,7 @@ public abstract class Role {
         }
     }
     
-    public abstract JPanel createWorkArea(JPanel userProcessContainer, 
-            User account,  
-            PESystem system);
+    public abstract JPanel createWorkArea(JPanel userProcessContainer, User account,  PESystem system);
 
     @Override
     public String toString() {

@@ -19,7 +19,5 @@ public class SystemAdminRole extends Role{
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User u, PESystem system) {
         return new Login(userProcessContainer,u, system);
-    }
-    
-    
+    } 
 }

@@ -33,6 +33,14 @@ public class UserAccountDirectory {
         return null;
     }
     
+    public User authenticateUser(String password){
+        for (User ua : userAccountList)
+            if (ua.getPassword().equals(password)){
+                return ua;
+            }
+        return null;
+    }
+    
     public User createUserAccount(String username, String password, Role role){
         User userAccount = new User();
         userAccount.setUsername(username);

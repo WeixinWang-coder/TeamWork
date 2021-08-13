@@ -35,7 +35,7 @@ public class main extends javax.swing.JPanel {
 
                 jButton1.setText("Doctor Directory");
 
-                jButton2.setText("User Directory");
+                jButton2.setText("Customer Directory");
 
                 jButton3.setText("Inquiry");
 

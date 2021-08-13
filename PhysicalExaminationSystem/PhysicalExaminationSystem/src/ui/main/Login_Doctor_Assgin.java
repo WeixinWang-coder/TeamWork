@@ -5,17 +5,35 @@
  */
 package ui.main;
 
+import LoginAccount.PESystem;
+import LoginAccount.User;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author TANKLI
  */
 public class Login_Doctor_Assgin extends javax.swing.JPanel {
 
-        /**
-         * Creates new form Login_Doctor_Assgin
-         */
-        public Login_Doctor_Assgin() {
+        private JPanel userProcessContainer;
+        private User userAccount;
+        private PESystem system;
+        public Login_Doctor_Assgin(JPanel userProcessContainer, User useraccount, PESystem system) {
                 initComponents();
+                this.userAccount = useraccount;
+                this.userProcessContainer = userProcessContainer;
+                this.system = system;
+                lblName.setText(userAccount.getName());
+                txtCenter.setText(userAccount.getCenter());
+                
+                cmbCenter.addItem("Center1");
+                cmbCenter.addItem("Center2");
+                cmbCenter.addItem("Center3");
+                cmbCenter.addItem("Center4");
+                
         }
 
         /**
@@ -27,25 +45,36 @@ public class Login_Doctor_Assgin extends javax.swing.JPanel {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
-                jComboBox1 = new javax.swing.JComboBox<>();
+                cmbCenter = new javax.swing.JComboBox<>();
                 jLabel1 = new javax.swing.JLabel();
-                jTextField1 = new javax.swing.JTextField();
+                txtCenter = new javax.swing.JTextField();
                 jLabel2 = new javax.swing.JLabel();
-                jButton1 = new javax.swing.JButton();
+                btnBack = new javax.swing.JButton();
                 jLabel3 = new javax.swing.JLabel();
-                jButton2 = new javax.swing.JButton();
+                btnSave = new javax.swing.JButton();
+                lblName = new javax.swing.JLabel();
 
-                jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-                jLabel1.setText("Default Centre:");
+                jLabel1.setText("Current Centre:");
 
                 jLabel2.setText("Doctor Name:");
 
-                jButton1.setText("Back");
+                btnBack.setText("Back");
+                btnBack.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnBackActionPerformed(evt);
+                        }
+                });
 
                 jLabel3.setText("Centre:");
 
-                jButton2.setText("Save");
+                btnSave.setText("Save");
+                btnSave.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnSaveActionPerformed(evt);
+                        }
+                });
+
+                lblName.setText("<Name>");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
@@ -55,52 +84,79 @@ public class Login_Doctor_Assgin extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()
-                                                .addComponent(jButton1))
+                                                .addComponent(btnBack))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(59, 59, 59)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel2)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(jLabel1)
-                                                                        .addComponent(jLabel3))
-                                                                .addGap(25, 25, 25)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(jButton2)
-                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                .addComponent(jLabel1)
+                                                                .addComponent(jLabel3))
+                                                        .addComponent(jLabel2))
+                                                .addGap(25, 25, 25)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(lblName)
+                                                        .addComponent(btnSave)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                .addComponent(cmbCenter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(txtCenter, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addContainerGap(72, Short.MAX_VALUE))
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1)
+                                .addComponent(btnBack)
                                 .addGap(51, 51, 51)
-                                .addComponent(jLabel2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel2)
+                                        .addComponent(lblName))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel1)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cmbCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel3))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)
+                                .addComponent(btnSave)
                                 .addGap(86, 86, 86))
                 );
         }// </editor-fold>//GEN-END:initComponents
 
+        private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+                String selectedItem = (String)cmbCenter.getSelectedItem();
+                
+                switch(selectedItem) {
+                        case "Center1" : userAccount.setCenter("Center1"); break;
+                        case "Center2" : userAccount.setCenter("Center2");break;
+                        case "Center3" : userAccount.setCenter("Center3");break;
+                        case "Center4" : userAccount.setCenter("Center4");break;
+                }
+                JOptionPane.showMessageDialog(null, "Successfully Assigned", " ", JOptionPane.INFORMATION_MESSAGE);
+                txtCenter.setText(selectedItem);
+        }//GEN-LAST:event_btnSaveActionPerformed
+
+        private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+                // TODO add your handling code here:
+                userProcessContainer.remove(this);
+                Component[] componentArray = userProcessContainer.getComponents();
+                Component component = componentArray[componentArray.length - 1];
+                Login_Doctor manageProductCatalogJPanel = (Login_Doctor) component;
+                manageProductCatalogJPanel.refreshTable();
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.previous(userProcessContainer);
+        }//GEN-LAST:event_btnBackActionPerformed
+
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JButton jButton1;
-        private javax.swing.JButton jButton2;
-        private javax.swing.JComboBox<String> jComboBox1;
+        private javax.swing.JButton btnBack;
+        private javax.swing.JButton btnSave;
+        private javax.swing.JComboBox<String> cmbCenter;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel2;
         private javax.swing.JLabel jLabel3;
-        private javax.swing.JTextField jTextField1;
+        private javax.swing.JLabel lblName;
+        private javax.swing.JTextField txtCenter;
         // End of variables declaration//GEN-END:variables
 }

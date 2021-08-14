@@ -63,6 +63,11 @@ public class Login_Center extends javax.swing.JPanel {
                 jScrollPane1.setViewportView(tbnCenter);
 
                 jButton1.setText("Create");
+                jButton1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton1ActionPerformed(evt);
+                        }
+                });
 
                 jButton2.setText("Delete");
 
@@ -107,6 +112,10 @@ public class Login_Center extends javax.swing.JPanel {
                 layout.previous(userProcessContainer);
 
         }//GEN-LAST:event_loginJButtonActionPerformed
+
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_jButton1ActionPerformed
         public void refreshTable() {
                 System.out.println("111");
                 DefaultTableModel model = (DefaultTableModel) tbnCenter.getModel();
@@ -118,9 +127,9 @@ public class Login_Center extends javax.swing.JPanel {
                         row[1] = u.getAddress();
                         row[2] = u.getLevel();
                         model.addRow(row);
-                        System.out.println("end");
+                        
                 }
-                System.out.println("000");
+                
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

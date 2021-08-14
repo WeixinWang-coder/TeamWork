@@ -5,7 +5,9 @@
  */
 package LoginAccount;
 
+import LoginAccount.UserDirectory.CustomerEntryHistory;
 import Roles.Role;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -26,17 +28,27 @@ public class User {
         private String department;
         private Role role;
         
+        
         private ImageIcon logoImage;
-
+        public CustomerEntryHistory entryHistory;
         
      
         public User() {
-                
+                this.entryHistory = new CustomerEntryHistory();
         }
         @Override
         public String toString() {
                 return name;
         }
+
+        public CustomerEntryHistory getEntryHistory() {
+                return entryHistory;
+        }
+
+        public void setEntryHistory(CustomerEntryHistory entryHistory) {
+                this.entryHistory = entryHistory;
+        }
+        
         public ImageIcon getLogoImage() {
                 return logoImage;
         }

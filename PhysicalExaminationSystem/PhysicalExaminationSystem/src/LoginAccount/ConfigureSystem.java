@@ -6,6 +6,7 @@
 package LoginAccount;
 
 import Roles.BasicInspectionDoctorRole;
+import Roles.CustomerRole;
 import Roles.SystemAdminRole;
 import javax.swing.JOptionPane;
 
@@ -14,32 +15,34 @@ import javax.swing.JOptionPane;
  * @author Syuu
  */
 public class ConfigureSystem {
-    
-    public static PESystem configure(){
-        
-        PESystem system = PESystem.getInstance();   
 
-        User ua = system.getUserDirectory().createUserAccount("1", "1", new SystemAdminRole());
-        
- 
-//        system.getDepartmentDirectory().addDepartment("Basic Inspection");
-//        system.getDepartmentDirectory().addDepartment("Innternal Med");
-//        system.getDepartmentDirectory().addDepartment("Orthopedics");
-//        system.getDepartmentDirectory().addDepartment("Otorhinolaryngologic");
-//        system.getDepartmentDirectory().addDepartment("Surgery");
-//        system.getDepartmentDirectory().addDepartment("Phyarmacy");
-//        system.getDepartmentDirectory().addDepartment("Feedback");
+        public static PESystem configure() {
 
-        Center c = new Center("Center1", "100 Rold", "High");
-        system.getCenterDirectory().getCenterDirectory().add(c);
-        
-//            Center center1 = system.getCenterDirectory().addCenter("Center1", "100 Rold", "High");
-//            System.out.println(center1);
-//            Center center2 = system.getCenterDirectory().addCenter("Center2", "100 Avenue", "Medium");
-//            Center center3 = system.getCenterDirectory().addCenter("Center3", "100 Place", "Medium");
-//            Center center4 = system.getCenterDirectory().addCenter("Center4", "100 Circle", "Primary");
+                PESystem system = PESystem.getInstance();
 
-            
+                User ua = system.getUserDirectory().createUserAccount("2", "2", new SystemAdminRole());
+                User createUserAccount = system.getUserDirectory().createUserAccount("c1", "1", new CustomerRole());
+                createUserAccount.setName("Alice");
+                createUserAccount.setAge("18");
+                createUserAccount.setGender("Female");
+                createUserAccount.setID("c001");
+                
+                User createDoctor1 = system.getUserDirectory().createUserAccount("d001", "1", new BasicInspectionDoctorRole());
+                Center center1 = system.getCenterDirectory().addCenter("Center1", "100 Rold", "High");
+                Center center2 = system.getCenterDirectory().addCenter("Center2", "100 Avenue", "Medium");
+                Center center3 = system.getCenterDirectory().addCenter("Center3", "100 Place", "Medium");
+                Center center4 = system.getCenterDirectory().addCenter("Center4", "100 Circle", "Primary");
+
+                system.getDepartmentDirectory().addDepartment("Basic Inspection",100);
+                system.getDepartmentDirectory().addDepartment("Innternal Med", 200);
+                system.getDepartmentDirectory().addDepartment("Orthopedics",300);
+                system.getDepartmentDirectory().addDepartment("Otorhinolaryngologic",280);
+                system.getDepartmentDirectory().addDepartment("Surgery",320);
+                system.getDepartmentDirectory().addDepartment("Clinical-Lab",50);
+                
+                system.getDepartmentDirectory().addDepartment("Phyarmacy");
+                system.getDepartmentDirectory().addDepartment("Feedback");
+
 //        User doctorBruce = new User();
 //        doctorBruce.setAge("50");
 //        doctorBruce.setCenter("Center 1");
@@ -52,10 +55,7 @@ public class ConfigureSystem {
 //        doctorBruce.setID("001");
 //
 //        system.getDoctorDirectory().getDoctorDirectory().add(doctorBruce);
- 
-        return system;
-        
-        
-        
-    }
+                return system;
+
+        }
 }

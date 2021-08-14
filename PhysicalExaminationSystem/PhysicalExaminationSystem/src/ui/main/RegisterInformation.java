@@ -254,34 +254,55 @@ public class RegisterInformation extends javax.swing.JPanel {
                             case "Basic Inspection":
                                     user.setDepartment(selectedItem);
                                     user.setRole(new BasicInspectionDoctorRole());
+                                    
+                                    Department BasicInspectionfindDepartment = system.getDepartmentDirectory().BasicInspectionfindDepartment();
+                                    BasicInspectionfindDepartment.getUserList().add(user);
                                     break;
                             case "Clinical Lab":
                                     user.setDepartment(selectedItem);
                                     user.setRole(new ClinicalLabDoctorRole());
+                                    Department ClinicalLabDepartment = system.getDepartmentDirectory().ClinicalLabDepartment();
+                                    ClinicalLabDepartment.getUserList().add(user);
                                     break;
                             case "Innternal Med":
                                     user.setDepartment(selectedItem);
                                     user.setRole(new InnternalMedDoctorRole());
+                                    
+                                     Department InnternalMedDepartment = system.getDepartmentDirectory().InnternalMedDepartment();
+                                    InnternalMedDepartment.getUserList().add(user);
                                     break;
                             case "Orthopedics":
                                     user.setDepartment(selectedItem);
                                     user.setRole(new OrthopedicsDoctorRole());
+                                    Department OrthopedicsDepartment = system.getDepartmentDirectory().OrthopedicsDepartment();
+                                    OrthopedicsDepartment.getUserList().add(user);
+                                    
                                     break;
                             case "Otorhinolaryngologic":
                                     user.setDepartment(selectedItem);
                                     user.setRole(new OtorhinolaryngologicDoctorRole());
+                                    
+                                    Department OtorhinolaryngologicDepartment = system.getDepartmentDirectory().OtorhinolaryngologicDepartment();
+                                    OtorhinolaryngologicDepartment.getUserList().add(user);
                                     break;
                             case "Surgery":
                                     user.setDepartment(selectedItem);
                                     user.setRole(new SurgicalDoctorRole());
+                                    Department SurgeryDepartment = system.getDepartmentDirectory().SurgeryDepartment();
+                                    SurgeryDepartment.getUserList().add(user);
                                     break;
                             case "Phyarmacy":
                                     user.setDepartment(selectedItem);
                                     user.setRole(new PhyarmacyRole());
+                                    
+                                    Department PharmacyDepartment = system.getDepartmentDirectory().PharmacyDepartment();
+                                    PharmacyDepartment.getUserList().add(user);
                                     break;
                             case "Feedback":
                                     user.setDepartment(selectedItem);
                                     user.setRole(new FeedbackRole());
+                                    Department FeedbackDepartment = system.getDepartmentDirectory().FeedbackDepartment();
+                                    FeedbackDepartment.getUserList().add(user);
                                     break;
                     }
                     user.setAge(age);

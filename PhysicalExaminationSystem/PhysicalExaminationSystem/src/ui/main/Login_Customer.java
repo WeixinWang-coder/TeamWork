@@ -128,6 +128,7 @@ public class Login_Customer extends javax.swing.JPanel {
                 userProcessContainer.add("Login_Customer_Search", mod);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
+                
         }//GEN-LAST:event_btnSearchActionPerformed
 
         private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

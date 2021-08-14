@@ -141,6 +141,8 @@ public class Login_Doctor extends javax.swing.JPanel {
                 userProcessContainer.add("Login_User_Search", mod);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
+                
+                
 
 //                User authenticateUser = system.getUserDirectory().authenticateUser(password);
 //                 

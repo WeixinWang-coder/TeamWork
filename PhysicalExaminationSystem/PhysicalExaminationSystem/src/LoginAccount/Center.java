@@ -17,11 +17,8 @@ public class Center {
         String level;
         ArrayList<User> doctorList;
         ArrayList<User> customerList;
-        public Center(String name, String address, String level) {
-                System.out.println("000");
-                this.name = name;
-                this.address = address;
-                this.level = level;
+        public Center() {
+   
                 doctorList = new ArrayList<>();
                 customerList = new ArrayList<>();
         }

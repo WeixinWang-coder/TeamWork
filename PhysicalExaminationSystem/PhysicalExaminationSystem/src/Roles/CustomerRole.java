@@ -8,6 +8,7 @@ package Roles;
 import LoginAccount.PESystem;
 import LoginAccount.User;
 import javax.swing.JPanel;
+import ui.customer.Main;
 
 /**
  *
@@ -15,6 +16,6 @@ import javax.swing.JPanel;
  */
 public class CustomerRole extends Role{
         public JPanel createWorkArea(JPanel userProcessContainer, User account, PESystem system) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                return new Main(userProcessContainer,account, system);
         }
 }

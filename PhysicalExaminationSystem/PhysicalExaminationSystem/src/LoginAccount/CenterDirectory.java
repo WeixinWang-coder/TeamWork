@@ -12,10 +12,10 @@ import java.util.ArrayList;
  * @author TANKLI
  */
 public class CenterDirectory {
-        ArrayList<Center> centerDirectory;
+        private ArrayList<Center> centerDirectory;
 
         public CenterDirectory() {
-                centerDirectory = new ArrayList<>();
+                centerDirectory = new ArrayList();
         }
 
         public void setCenterDirectory(ArrayList<Center> centerDirectory) {
@@ -25,10 +25,13 @@ public class CenterDirectory {
         public ArrayList<Center> getCenterDirectory() {
                 return centerDirectory;
         }
-//        public Center addCenter(String name, String address,String level) {
-//
-//                Center c = new Center(name, address, level);
-//                centerDirectory.add(c);
-//                return c;
-//        }
+        public Center addCenter(String name, String address,String level) {
+
+                Center c = new Center();
+                c.setAddress(address);
+                c.setName(name);
+                c.setLevel(level);
+                centerDirectory.add(c);
+                return c;
+        }
 }

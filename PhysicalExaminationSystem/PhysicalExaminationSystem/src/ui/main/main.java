@@ -145,6 +145,9 @@ public class main extends javax.swing.JFrame {
                 String password = String.valueOf(passwordList);
 
                 User ua = system.getUserDirectory().authenticateUser(username, password);
+                for(User u : system.getUserDirectory().getUserAccountList()){
+                    System.out.println(u.getUsername());
+                }
                 if (ua == null) {
                         JOptionPane.showMessageDialog(null, "Invalid credentials");
                         return;
@@ -153,8 +156,8 @@ public class main extends javax.swing.JFrame {
                         JPanel createWorkArea = ua.getRole().createWorkArea(container, ua, system);
                         container.add("workArea", createWorkArea);
                         layout.next(container);
-
                 }
+                
                 loginJButton.setEnabled(false);
                 logoutJButton.setEnabled(true);
                 userNameJTextField.setEnabled(false);

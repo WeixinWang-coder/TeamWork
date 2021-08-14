@@ -5,28 +5,31 @@
  */
 package ui.Doctor;
 
-import LoginAccount.Center;
 import LoginAccount.PESystem;
 import LoginAccount.User;
 import javax.swing.JPanel;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author TANKLI
+ * @author Syuu
  */
-public class BasicDoctorWaitingList extends javax.swing.JPanel {
+public class ClinicalLabDoctorWaitingList extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
     User account;
     PESystem system;
 
-    public BasicDoctorWaitingList(JPanel userProcessContainer, User account, PESystem system) {
+    /**
+     * Creates new form ClinicalLabDoctorWaitingListJPanel
+     * @param userProcessContainer
+     * @param account
+     * @param system
+     */
+    public ClinicalLabDoctorWaitingList(JPanel userProcessContainer, User account, PESystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.system = system;
-        refreshTable();
     }
 
     /**
@@ -38,6 +41,7 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -61,24 +65,24 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
 
         jButton2.setText("Accept and Enter");
 
-        jLabel1.setText("Basic Inspection Waiting List");
+        jLabel1.setText("Clinical Lab Waiting List");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2)
                     .addComponent(jLabel1))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
                 .addGap(26, 26, 26)
@@ -87,7 +91,24 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -96,29 +117,8 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-
-    private void refreshTable() {
-        Center c = null;
-        
-        for(Center center:system.getCenterDirectory().getCenterDirectory()){
-            if(center.getName().equals(account.getCenter())){
-                c = center;
-            }
-        }
-        
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0);
-
-        for (User u : c.getCustomerList()) {
-            Object row[] = new Object[3];
-            row[0] = u;
-            row[1] = u.getGender();
-            row[2] = u.getAge();
-            model.addRow(row);
-        }
-
-    }
 }

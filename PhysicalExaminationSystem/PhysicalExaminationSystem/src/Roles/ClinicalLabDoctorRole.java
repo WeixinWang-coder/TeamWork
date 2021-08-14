@@ -8,13 +8,18 @@ package Roles;
 import LoginAccount.PESystem;
 import LoginAccount.User;
 import javax.swing.JPanel;
+import ui.Doctor.BasicDoctorWaitingList;
+import ui.Doctor.ClinicalLabDoctor;
+import ui.Doctor.ClinicalLabDoctorWaitingList;
 
 /**
  *
  * @author TANKLI
  */
 public class ClinicalLabDoctorRole extends Role{
+    
+        @Override
         public JPanel createWorkArea(JPanel userProcessContainer, User account, PESystem system) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                return new ClinicalLabDoctorWaitingList(userProcessContainer,account, system);
         }
 }

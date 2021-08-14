@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class PESystem {
     
     private static PESystem system;
-    
     private UserAccountDirectory userAccountDirectory;
     private CenterDirectory centerDirectory;
     private DepartmentDirectory departmentDirectory;
@@ -64,6 +63,11 @@ public class PESystem {
 
         public DoctorDirectory getDoctorDirectory() {
                 return doctorDirectory;
+        }
+        
+        public void addDoctor(User u) {
+                doctorDirectory.getDoctorDirectory().add(u);
+                userAccountDirectory.getUserAccountList().add(u);
         }
 
         public void setDoctorDirectory(DoctorDirectory doctorDirectory) {

@@ -6,7 +6,9 @@
 package LoginAccount;
 
 import Roles.BasicInspectionDoctorRole;
+import Roles.ClinicalLabDoctorRole;
 import Roles.CustomerRole;
+import Roles.InnternalMedDoctorRole;
 import Roles.SystemAdminRole;
 import javax.swing.JOptionPane;
 
@@ -26,13 +28,22 @@ public class ConfigureSystem {
                 createUserAccount.setAge("18");
                 createUserAccount.setGender("Female");
                 createUserAccount.setID("c001");
+                createUserAccount.setCenter("Center1");
                 
                 User createDoctor1 = system.getUserDirectory().createUserAccount("d001", "1", new BasicInspectionDoctorRole());
+                createDoctor1.setCenter("Center1");
+                
+                User createDoctor2 = system.getUserDirectory().createUserAccount("d002", "2", new ClinicalLabDoctorRole());
+                
+                User createDoctor3 = system.getUserDirectory().createUserAccount("d003", "3", new InnternalMedDoctorRole());
+                
                 Center center1 = system.getCenterDirectory().addCenter("Center1", "100 Rold", "High");
                 Center center2 = system.getCenterDirectory().addCenter("Center2", "100 Avenue", "Medium");
                 Center center3 = system.getCenterDirectory().addCenter("Center3", "100 Place", "Medium");
                 Center center4 = system.getCenterDirectory().addCenter("Center4", "100 Circle", "Primary");
-
+                
+                center1.getCustomerList().add(createUserAccount);
+                
                 system.getDepartmentDirectory().addDepartment("Basic Inspection",100);
                 system.getDepartmentDirectory().addDepartment("Innternal Med", 200);
                 system.getDepartmentDirectory().addDepartment("Orthopedics",300);
@@ -42,6 +53,7 @@ public class ConfigureSystem {
                 
                 system.getDepartmentDirectory().addDepartment("Phyarmacy");
                 system.getDepartmentDirectory().addDepartment("Feedback");
+                
 
 //        User doctorBruce = new User();
 //        doctorBruce.setAge("50");

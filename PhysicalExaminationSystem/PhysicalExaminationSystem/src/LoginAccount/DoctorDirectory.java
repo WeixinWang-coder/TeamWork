@@ -27,10 +27,6 @@ public class DoctorDirectory {
                 this.doctorDirectory = doctorDirectory;
         }
 
-        public void addDoctor() {
-                User u = new User();
-                doctorDirectory.add(u);
-        }
 
         public User searchDoctor(String ID) {
                 for (User ua : doctorDirectory) {

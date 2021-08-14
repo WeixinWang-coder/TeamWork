@@ -5,17 +5,27 @@
  */
 package ui.Doctor;
 
+import LoginAccount.PESystem;
+import LoginAccount.User;
+import javax.swing.JPanel;
+
 /**
  *
  * @author TANKLI
  */
 public class ClinicalLabDoctor extends javax.swing.JPanel {
-
+        
+        JPanel userProcessContainer;
+        User account;
+        PESystem system;
         /**
          * Creates new form ClinicalLabDoctor
          */
-        public ClinicalLabDoctor() {
+        public ClinicalLabDoctor(JPanel userProcessContainer, User account, PESystem system) {
                 initComponents();
+                this.userProcessContainer = userProcessContainer;
+                this.account = account;
+                this.system = system;
         }
 
         /**
@@ -245,12 +255,12 @@ public class ClinicalLabDoctor extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(lblPage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblPname, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel12)
-                                    .addComponent(jLabel13)
-                                    .addComponent(lblPname, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel13)))
                             .addComponent(lblPgender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

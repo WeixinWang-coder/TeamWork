@@ -5,28 +5,27 @@
  */
 package ui.Doctor;
 
-import LoginAccount.Center;
 import LoginAccount.PESystem;
 import LoginAccount.User;
 import javax.swing.JPanel;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author TANKLI
+ * @author Syuu
  */
-public class BasicDoctorWaitingList extends javax.swing.JPanel {
-
+public class InnternalMedWaitingList extends javax.swing.JPanel {
+    
     JPanel userProcessContainer;
     User account;
     PESystem system;
-
-    public BasicDoctorWaitingList(JPanel userProcessContainer, User account, PESystem system) {
+    /**
+     * Creates new form InnternalMedWaitingList
+     */
+    public InnternalMedWaitingList(JPanel userProcessContainer, User account, PESystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.system = system;
-        refreshTable();
     }
 
     /**
@@ -61,7 +60,7 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
 
         jButton2.setText("Accept and Enter");
 
-        jLabel1.setText("Basic Inspection Waiting List");
+        jLabel1.setText("InnternalMed Waiting List");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -74,7 +73,7 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2)
                     .addComponent(jLabel1))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +86,7 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -99,26 +98,4 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-
-    private void refreshTable() {
-        Center c = null;
-        
-        for(Center center:system.getCenterDirectory().getCenterDirectory()){
-            if(center.getName().equals(account.getCenter())){
-                c = center;
-            }
-        }
-        
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0);
-
-        for (User u : c.getCustomerList()) {
-            Object row[] = new Object[3];
-            row[0] = u;
-            row[1] = u.getGender();
-            row[2] = u.getAge();
-            model.addRow(row);
-        }
-
-    }
 }

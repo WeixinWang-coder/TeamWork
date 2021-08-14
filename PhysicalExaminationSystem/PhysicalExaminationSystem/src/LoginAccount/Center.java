@@ -12,55 +12,62 @@ import java.util.ArrayList;
  * @author TANKLI
  */
 public class Center {
-        String name;
-        String address;
-        String level;
-        ArrayList<User> doctorList;
-        ArrayList<User> customerList;
-        public Center() {
-   
-                doctorList = new ArrayList<>();
-                customerList = new ArrayList<>();
-        }
-        @Override
-        public String toString() {
-                return name;
-        }
-        
-        public String getName() {
-                return name;
-        }
 
-        public void setName(String name) {
-                this.name = name;
-        }
+    String name;
+    String address;
+    String level;
+    ArrayList<User> doctorList;
+    ArrayList<User> customerList;
 
-        public String getAddress() {
-                return address;
-        }
+    public Center() {
 
-        public void setAddress(String address) {
-                this.address = address;
-        }
+        doctorList = new ArrayList<>();
+        customerList = new ArrayList<>();
+    }
 
-        public String getLevel() {
-                return level;
-        }
+    @Override
+    public String toString() {
+        return name;
+    }
 
-        public void setLevel(String level) {
-                this.level = level;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setCustomerList(ArrayList<User> customerList) {
-                this.customerList = customerList;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public ArrayList<User> getDoctorList() {
-                return doctorList;
-        }
+    public String getAddress() {
+        return address;
+    }
 
-        public void setDoctorList(ArrayList<User> doctorList) {
-                this.doctorList = doctorList;
-        }
-        
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public void setCustomerList(ArrayList<User> customerList) {
+        this.customerList = customerList;
+    }
+
+    public ArrayList<User> getDoctorList() {
+        return doctorList;
+    }
+
+    public void setDoctorList(ArrayList<User> doctorList) {
+        this.doctorList = doctorList;
+    }
+
+    public ArrayList<User> getCustomerList() {
+        return customerList;
+    }
+
 }

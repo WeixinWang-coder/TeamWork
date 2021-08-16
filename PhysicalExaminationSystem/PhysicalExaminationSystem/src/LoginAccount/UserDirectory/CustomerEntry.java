@@ -18,6 +18,7 @@ public class CustomerEntry {
         String year;
         String month;
         String date;
+        UserReport ur;
 
         public String toString() {
                 return center;
@@ -56,6 +57,7 @@ public class CustomerEntry {
         
         public CustomerEntry() {
                 this.item = new ArrayList<>();
+                this.ur = new UserReport();
         }
 
        
@@ -67,6 +69,14 @@ public class CustomerEntry {
         public void setCenter(String center) {
                 this.center = center;
         }
+
+    public UserReport getUr() {
+        return ur;
+    }
+
+    public void setUr(UserReport ur) {
+        this.ur = ur;
+    }
 
         
         

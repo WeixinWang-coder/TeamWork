@@ -31,17 +31,17 @@ public class ExaminationHistory extends javax.swing.JPanel {
                 this.system = system;
                 txtName.setText(account.getName());
                 refreshTable();
-        }
+        } 
 
        public void refreshTable() {
                 DefaultTableModel model = (DefaultTableModel) tblHistory.getModel();
                 model.setRowCount(0);
-                for (CustomerEntry c: account.getEntryHistory().getEntryHistory()) {
+                account.getEntryHistory().getEntryHistory().forEach((key,value) ->{
                         Object row[] = new Object[2];
-                        row[0] = c;
-                        row[1] = c.getMonth() + "/" + c.getDate() + "/" + c.getYear();
+                        row[0] = value;
+                        row[1] = key;
                         model.addRow(row);
-                }
+       });
         }
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

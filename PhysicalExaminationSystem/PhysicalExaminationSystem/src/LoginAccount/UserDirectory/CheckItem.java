@@ -10,25 +10,27 @@ package LoginAccount.UserDirectory;
  * @author TANKLI
  */
 public class CheckItem {
-        String price;
-        String itemName;
 
-        public String toString() {
-                return itemName;
-        }
-        public String getPrice() {
-                return price;
-        }
+    String price;
+    String itemName;
 
-        public void setPrice(String price) {
-                this.price = price;
-        }
+    public String toString() {
+        return itemName;
+    }
 
-        public String getItemName() {
-                return itemName;
-        }
+    public String getPrice() {
+        return price;
+    }
 
-        public void setItemName(String itemName) {
-                this.itemName = itemName;
-        }
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
 }

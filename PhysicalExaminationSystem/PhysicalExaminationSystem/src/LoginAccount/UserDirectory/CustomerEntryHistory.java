@@ -14,22 +14,19 @@ import java.util.Map;
  * @author TANKLI
  */
 public class CustomerEntryHistory {
-        
-        public ArrayList<CustomerEntry> entryHistory;
 
-        public CustomerEntryHistory() {
-                entryHistory = new ArrayList<>();
-        }
+    public HashMap<String, CustomerEntry> entryHistory;
 
-        public ArrayList<CustomerEntry> getEntryHistory() {
-                return entryHistory;
-        }
+    public CustomerEntryHistory() {
+        entryHistory = new HashMap<>();
+    }
 
-        public void setEntryHistory(ArrayList<CustomerEntry> entryHistory) {
-                this.entryHistory = entryHistory;
-        }
+    public HashMap<String, CustomerEntry> getEntryHistory() {
+        return entryHistory;
+    }
 
-        
+    public void setEntryHistory(HashMap<String, CustomerEntry> entryHistory) {
+        this.entryHistory = entryHistory;
+    }
 
-        
 }

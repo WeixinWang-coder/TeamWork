@@ -12,6 +12,7 @@ import LoginAccount.User;
 import LoginAccount.UserDirectory.CheckItem;
 import LoginAccount.UserDirectory.CustomerEntry;
 import LoginAccount.UserDirectory.CustomerEntryHistory;
+import LoginAccount.UserDirectory.Date;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -303,7 +304,11 @@ public class CreateNewExamination extends javax.swing.JPanel {
 
         private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed
                 // TODO add your handling code here:
-                account.getEntryHistory().getEntryHistory().add(c);
+                String selectedMonth = (String) cmbMonth.getSelectedItem();
+                String selectedDate = (String) cmbDate.getSelectedItem();
+                String selectedYear = (String) cmbYear.getSelectedItem();
+                String date = selectedDate+"/"+selectedMonth+"/"+selectedYear;
+                account.getEntryHistory().getEntryHistory().put(date, c);
                 JOptionPane.showMessageDialog(null, "Thanks for your payment", " ", JOptionPane.INFORMATION_MESSAGE);
         }//GEN-LAST:event_btnPayActionPerformed
 

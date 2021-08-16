@@ -15,30 +15,37 @@
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/User.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/Roles/OtorhinolaryngologicDoctorRole.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/Doctor/BasicDoctorWaitingList.java</file>
+            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/customer/ExaminationHistory.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/Doctor/InnternalMedDoctor.java</file>
+            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/customer/CreateNewExamination.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/ConfigureSystem.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/DoctorDirectory.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/Doctor/ClinicalLabDoctor.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/main/Login_Doctor.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/UserDirectory/CustomerEntry.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/Roles/Role.java</file>
+            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/customer/Report.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/main/Login.java</file>
-            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/Doctor/ClinicalLabDoctorWaitingList.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/CenterDirectory.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/Center.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/Doctor/InnternalMedWaitingList.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/DepartmentDirectory.java</file>
+            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/report/ReportDoctorJPanel.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/Roles/ClinicalLabDoctorRole.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/Department.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/main/Login_Doctor_Assgin.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/Roles/CustomerRole.java</file>
+            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/ExaminationCenter/DoctorDirectory.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/Roles/SystemAdminRole.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/Roles/OrthopedicsDoctorRole.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/Roles/FeedbackRole.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/UserDirectory/CheckItem.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/UserDirectory/UserAccountDirectory.java</file>
+            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/UserDirectory/Date.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/User/Person.java</file>
+            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/LoginAccount/UserDirectory/UserReport.java</file>
             <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/Doctor/BasicDoctor.java</file>
+            <file>file:/C:/Users/Syuu/Documents/Final%20Project/TeamWork/PhysicalExaminationSystem/PhysicalExaminationSystem/src/ui/ExaminationCenter/Inquiry.java</file>
         </group>
     </open-files>
 </project-private>

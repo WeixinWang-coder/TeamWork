@@ -8,6 +8,10 @@ package ui.Doctor;
 import LoginAccount.Center;
 import LoginAccount.PESystem;
 import LoginAccount.User;
+import LoginAccount.UserDirectory.CustomerEntry;
+import LoginAccount.UserDirectory.CustomerEntryHistory;
+import LoginAccount.UserDirectory.Date;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,6 +31,36 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
         this.account = account;
         this.system = system;
         refreshTable();
+        cmbMonth();
+        cmbYear();
+        cmbDate();
+    }
+
+    public void cmbMonth() {
+        cmbMonth.addItem("January");
+        cmbMonth.addItem("Feburary");
+        cmbMonth.addItem("March");
+        cmbMonth.addItem("April");
+        cmbMonth.addItem("May");
+        cmbMonth.addItem("June");
+        cmbMonth.addItem("July");
+        cmbMonth.addItem("Auguest");
+        cmbMonth.addItem("September");
+        cmbMonth.addItem("Octorber");
+        cmbMonth.addItem("November");
+        cmbMonth.addItem("December");
+    }
+
+    public void cmbDate() {
+        for (int i = 1; i < 32; i++) {
+            cmbDate.addItem(String.valueOf(i));
+        }
+    }
+
+    public void cmbYear() {
+        for (int i = 2021; i < 2025; i++) {
+            cmbYear.addItem(String.valueOf(i));
+        }
     }
 
     /**
@@ -43,6 +77,14 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        cmbDate = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        cmbYear = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        cmbMonth = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         jButton1.setText("Back");
 
@@ -60,64 +102,157 @@ public class BasicDoctorWaitingList extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         jButton2.setText("Accept and Enter");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Basic Inspection Waiting List");
+
+        jLabel7.setText("Year:");
+
+        jLabel4.setText("Date:");
+
+        jLabel5.setText("Month");
+
+        jLabel6.setText("Date:");
+
+        jButton3.setText("Search");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
-                    .addComponent(jLabel1))
-                .addContainerGap(82, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(jButton3)))))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(cmbDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7)
+                        .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel5)
+                        .addComponent(cmbMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        refreshTable();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+
+        if (selectedRow < 0) {
+            return;
+        }
+        
+        User u = (User) jTable1.getValueAt(selectedRow, 0);
+        
+        String selectedMonth = (String) cmbMonth.getSelectedItem();
+        String selectedDate = (String) cmbDate.getSelectedItem();
+        String selectedYear = (String) cmbYear.getSelectedItem();
+        String date = selectedDate + "/" + selectedMonth + "/" + selectedYear;
+        
+        BasicDoctor basicDoctor = new BasicDoctor(userProcessContainer, u, system, date, account);
+        userProcessContainer.add("BasicDoctor", basicDoctor);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbDate;
+    private javax.swing.JComboBox<String> cmbMonth;
+    private javax.swing.JComboBox<String> cmbYear;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
     private void refreshTable() {
         Center c = null;
-        
-        for(Center center:system.getCenterDirectory().getCenterDirectory()){
-            if(center.getName().equals(account.getCenter())){
+
+        for (Center center : system.getCenterDirectory().getCenterDirectory()) {
+            if (center.getName().equals(account.getCenter())) {
                 c = center;
             }
         }
-        
+
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
+        String selectedMonth = (String) cmbMonth.getSelectedItem();
+        String selectedDate = (String) cmbDate.getSelectedItem();
+        String selectedYear = (String) cmbYear.getSelectedItem();
+        String date = selectedDate + "/" + selectedMonth + "/" + selectedYear;
 
         for (User u : c.getCustomerList()) {
-            Object row[] = new Object[3];
-            row[0] = u;
-            row[1] = u.getGender();
-            row[2] = u.getAge();
-            model.addRow(row);
+            if (u.getEntryHistory().getEntryHistory().containsKey(date)) {
+                Object row[] = new Object[3];
+                row[0] = u;
+                row[1] = u.getGender();
+                row[2] = u.getAge();
+                model.addRow(row);
+            }
         }
 
     }
